@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -40,11 +40,10 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
 
     /**
-     * sliders : one to many
+     * sliders
      *
      * @return void
      */
@@ -54,7 +53,7 @@ class User extends Authenticatable
     }
 
     /**
-     * categories : one to many
+     * categories
      *
      * @return void
      */
@@ -64,7 +63,7 @@ class User extends Authenticatable
     }
 
     /**
-     * places : one to many
+     * places
      *
      * @return void
      */
